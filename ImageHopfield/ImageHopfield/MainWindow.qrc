@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>Resources/Edit.png</file>
+        <file>Resources/Exit.png</file>
+        <file>Resources/Load.png</file>
+        <file>Resources/New_file.png</file>
+        <file>Resources/Save.png</file>
+        <file>Resources/About.png</file>
+        <file>Resources/Help.png</file>
+        <file>Resources/Educate.png</file>
+        <file>Resources/Open Image.png</file>
+        <file>Resources/Recognize.png</file>
+        <file>Resources/Load default.png</file>
+        <file>Resources/Synchronized.png</file>
+        <file>Resources/sound-volume-wave-acoustics-128.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageHopfieldClass</class>
+ <widget class="QMainWindow" name="ImageHopfieldClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1191</width>
+    <height>946</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Сітка Хопфілда</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="openImageButton">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>350</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Відкрити зображення</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="educateButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>450</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Навчити</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="recognizeButton">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>560</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Розпізнати синхронно</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="inputImageGraphicsView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>471</width>
+      <height>781</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="inputImageLabel">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>20</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Вхідне зображення</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="outputImageGraphicsView">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>70</y>
+      <width>471</width>
+      <height>781</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="outputImageLabel">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>20</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Вихідне зображення</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Допомога</string>
+    </property>
+    <addaction name="actionView_Help"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Редагування</string>
+    </property>
+    <addaction name="actionOpen_Image"/>
+    <addaction name="actionEducate"/>
+    <addaction name="actionRecognize"/>
+    <addaction name="actionRecognize_Async"/>
+    <addaction name="separator"/>
+    <addaction name="actionDefault_images"/>
+    <addaction name="actionNoise"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="separator"/>
+   <addaction name="actionOpen_Image"/>
+   <addaction name="actionEducate"/>
+   <addaction name="actionRecognize"/>
+   <addaction name="actionRecognize_Async"/>
+   <addaction name="separator"/>
+   <addaction name="actionDefault_images"/>
+   <addaction name="actionNoise"/>
+  </widget>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/Exit.png</normaloff>:/Images/Resources/Exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Вихід</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/New_file.png</normaloff>:/Images/Resources/New_file.png</iconset>
+   </property>
+   <property name="text">
+    <string>Новий</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/About.png</normaloff>:/Images/Resources/About.png</iconset>
+   </property>
+   <property name="text">
+    <string>Про програму</string>
+   </property>
+  </action>
+  <action name="actionView_Help">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/Help.png</normaloff>:/Images/Resources/Help.png</iconset>
+   </property>
+   <property name="text">
+    <string>Подивитися допомогу</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionOpen_Image">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/Open Image.png</normaloff>:/Images/Resources/Open Image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Відкрити зображення</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionEducate">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/Educate.png</normaloff>:/Images/Resources/Educate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Навчити</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionRecognize">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/Synchronized.png</normaloff>:/Images/Resources/Synchronized.png</iconset>
+   </property>
+   <property name="text">
+    <string>Розпізнати синхронно</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionDefault_images">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/Load default.png</normaloff>:/Images/Resources/Load default.png</iconset>
+   </property>
+   <property name="text">
+    <string>Стандартні зображення</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionRecognize_Async">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/Recognize.png</normaloff>:/Images/Resources/Recognize.png</iconset>
+   </property>
+   <property name="text">
+    <string>Розпізнати асинхронно</string>
+   </property>
+  </action>
+  <action name="actionNoise">
+   <property name="icon">
+    <iconset resource="MainWindow.qrc">
+     <normaloff>:/Images/Resources/sound-volume-wave-acoustics-128.png</normaloff>:/Images/Resources/sound-volume-wave-acoustics-128.png</iconset>
+   </property>
+   <property name="text">
+    <string>Зашумлення</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="imagehopfield.qrc"/>
+  <include location="MainWindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>
